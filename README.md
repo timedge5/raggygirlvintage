@@ -1,4 +1,5 @@
-# DESIGN
+Ecommerce site for RaggyGirlVintage.
+<!-- # DESIGN
 - [x] create Figma project
 - [] design for pages
     - [] main pages
@@ -33,4 +34,4 @@
     - [] handle updating an item
     - [] handle uploading pictures into firebase storage
 
-# DEPLOY
+# DEPLOY -->
