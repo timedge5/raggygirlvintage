@@ -2,6 +2,7 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Product {
+    id: ID
     archived: Boolean
     featured: Boolean
     sale: Boolean
@@ -23,6 +24,7 @@ const typeDefs = gql`
   }
 
   input updatesInput {
+    id: ID
     archived: Boolean
     featured: Boolean
     sale: Boolean
