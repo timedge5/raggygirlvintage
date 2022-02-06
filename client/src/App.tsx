@@ -1,3 +1,13 @@
+import { Header } from "./components/Header";
+import { Main } from "./routes/Main";
+
 export const App = () => {
-  return <div className="bg-red-400 h-screen">app</div>;
+  return (
+    <div className="h-screen">
+      <Header />
+      <div className="pt-12">
+        <Main />
+      </div>
+    </div>
+  );
 };
