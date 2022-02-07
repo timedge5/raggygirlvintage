@@ -9,22 +9,22 @@ const typeDefs = gql`
     type: String
     value: String
     description: String
-    images: [Image]
+    images: [idString]
     name: String
     price: String
     quantity: Int
   }
 
-  type Image {
+  type idString {
     id: String
   }
 
-  input ImageInput {
+  input idStringInput {
     id: String!
   }
 
   input updatesInput {
-    id: ID
+    id: ID!
     archived: Boolean
     featured: Boolean
     sale: Boolean
@@ -34,11 +34,23 @@ const typeDefs = gql`
     name: String
     price: String
     quantity: Int
-    images: [ImageInput]
+    images: [idStringInput]
   }
 
   type Order {
-    number: String
+    id: ID
+    address: String
+    city: String
+    country: String
+    province: String
+    zipcode: String
+    email: String
+    name: String
+    products: [idString]
+  }
+
+  input updateOrderInput {
+    id: ID!
     address: String
     city: String
     country: String
@@ -50,8 +62,10 @@ const typeDefs = gql`
 
   type Query {
     products: [Product]
-    product(id: String!): Product
+    product(id: ID!): Product
     product_types(type: String!): [Product]
+    orders: [Order]
+    order(id: ID!): Order
   }
 
   type Mutation {
@@ -65,10 +79,22 @@ const typeDefs = gql`
       name: String!
       price: String!
       quantity: Int!
-      images: [ImageInput]!
+      images: [idStringInput]!
     ): Product
-    update_product(id: String!, updates: updatesInput!): Product
-    delete_product(id: String!): Product
+    update_product(id: ID!, updates: updatesInput!): Product
+    delete_product(id: ID!): Product
+    add_order(
+      address: String!
+      city: String!
+      country: String!
+      province: String!
+      zipcode: String!
+      email: String!
+      name: String!
+      products: [idStringInput]!
+    ): Order
+    update_order(id: ID!, updates: updateOrderInput!): Order
+    delete_order(id: ID!): Order
   }
 `;
 
