@@ -7,6 +7,7 @@ import { Contact } from "../pages/Contact";
 import { Quilts } from "../pages/Quilts";
 import { Pillows } from "../pages/Pillows";
 import { Bunting } from "../pages/Bunting";
+import { Cart } from "../pages/Cart";
 
 export const Main = () => {
   return (
@@ -18,6 +19,7 @@ export const Main = () => {
       <Route path="/shop/quilts" element={<Quilts />} />
       <Route path="/shop/pillows" element={<Pillows />} />
       <Route path="/shop/bunting" element={<Bunting />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   );
 };
