@@ -5,7 +5,7 @@ export const App = () => {
   return (
     <div className="h-screen">
       <Header />
-      <div className="pt-12 lg:pt-16">
+      <div className="pt-12 lg:pt-16 h-full">
         <Main />
       </div>
     </div>
